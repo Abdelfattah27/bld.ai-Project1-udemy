@@ -161,7 +161,12 @@ body {
   overflow: hidden;
 }
 .heading {
-  margin-bottom: 15px;
+  margin: 15px 0px;
+}
+.tab-text {
+  margin-bottom: 10px;
+  font-weight: lighter;
+  margin-top: 25px;
 }
 .bannerImage {
   width: 100%;
@@ -214,11 +219,7 @@ body {
   margin-right: 25px;
   height: 330px;
 }
-.tab-text {
-  margin-bottom: 10px;
-  font-weight: lighter;
-  margin-top: 25px;
-}
+
 .courses {
   display: flex;
   flex-wrap: wrap;
