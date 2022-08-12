@@ -5,10 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="courses-navigation.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
+    <link rel="stylesheet" href="nav.css" />
+    <link rel="stylesheet" href="panner.css" />
+    <link rel="stylesheet" href="courses.css" />
     <title>Online Courses - Learn Anything, On Your Schedule | Udemy</title>
     <link
       rel="icon"
@@ -19,39 +23,39 @@
   </head>
   <body>
     <header>
-      <nav class="navigationBar">
+      <nav class="nav-bar">
         <div class="nav-item udemy">
           <a href=""
             ><img
-              class="udemyLogo"
+              class="udemy-logo"
               src="Resourses/Udemy_logo.svg.png"
-              alt="Udemy_logo"
+              alt="Udemy logo"
           /></a>
         </div>
         <div class="nav-item categories">
-          <a class="ancor" href="">Categories</a>
+          <a class="anchor" href="">Categories</a>
         </div>
 
         <div class="nav-item main-item">
           <form class="form" action="#">
             <input
-              placeholder="searsh for any thing"
+              placeholder="search for any thing"
               class="form-inp"
               type="text"
             />
             <button class="form-btn" type="submit"></button>
           </form>
         </div>
-        <button class="auxillary" type="submit"></button>
+        <button class="auxillary-search" type="submit"></button>
         <div class="nav-item udemy-business">
-          <a class="ancor" href="">Udemy Business</a>
+          <a class="anchor" href="">Udemy Business</a>
         </div>
         <div class="nav-item Teach-on-udemy">
-          <a class="ancor" href="">Teach on Udemy</a>
+          <a class="anchor" href="">Teach on Udemy</a>
         </div>
 
-        <div class="nav-item shooping">
-          <a class="ancor" href=""
+        <div class="nav-item">
+          <a class="anchor" href=""
             ><span class="material-symbols-outlined Shopping">
               shopping_cart_checkout
             </span></a
@@ -59,27 +63,31 @@
         </div>
 
         <div class="nav-item log-in">
-          <button class="btn">Log in</button>
+          <button class="btn log-in-btn">Log in</button>
         </div>
         <div class="nav-item sign-up">
           <button class="btn sign-up-btn">Sign up</button>
         </div>
         <div class="nav-item menu icon">
-          <a class="ancor" href="">
+          <a class="anchor" href="">
             <span class="material-symbols-outlined"> menu </span>
           </a>
         </div>
         <div class="nav-item icon language">
-          <a class="ancor" href=""><span class="lang-icon"> language </span></a>
+          <a href=""><span class="lang-icon"> language </span></a>
         </div>
       </nav>
     </header>
     <main class="main-content">
       <section class="banner">
-        <div class="bannerImage">
-          <img class="bannerimg" src="Resourses/banerImage.jpg" alt="" />
+        <div class="banner-image">
+          <img
+            class="banner-img"
+            src="Resourses/banerImage.jpg"
+            alt="Time out"
+          />
         </div>
-        <div class="bannercontent smallscreen">
+        <div class="banner-content smallscreen">
           <h1 class="heading">New to Udemy? Lucky you.</h1>
 
           <p>
@@ -96,13 +104,25 @@
           every month
         </h3>
         <ul class="tabs">
-          <li class="tab active-tab"><a class="ancor" href="#">Python</a></li>
-          <li class="tab"><a class="ancor" href="#"> Excel </a></li>
-          <li class="tab"><a class="ancor" href="#"> Web Development </a></li>
-          <li class="tab"><a class="ancor" href="#"> JavaScript </a></li>
-          <li class="tab"><a class="ancor" href="#"> Data Science </a></li>
-          <li class="tab"><a class="ancor" href="#"> AWS Certification </a></li>
-          <li class="tab"><a class="ancor" href="#"> Drawing </a></li>
+          <li id="Python" class="tab">
+            <a class="active-tab" href="#">Python</a>
+          </li>
+          <li id="Excel" class="tab"><a href="#"> Excel </a></li>
+          <li id="Web" class="tab">
+            <a href="#"> Web Development </a>
+          </li>
+          <li id="JavaScript" class="tab">
+            <a href="#"> JavaScript </a>
+          </li>
+          <li id="Data" class="tab">
+            <a href="#"> Data Science </a>
+          </li>
+          <li id="AWS" class="tab">
+            <a href="#"> AWS Certification </a>
+          </li>
+          <li id="Drawing" class="tab">
+            <a href="#"> Drawing </a>
+          </li>
         </ul>
       </section>
       <section class="courses-section">
@@ -117,16 +137,20 @@
         <button class="btn explore" type="menu">Explore Python</button>
         <section class="courses">
           <div class="course">
-            <img class="course-img" src="Resourses/cources/python.PNG" alt="" />
+            <img
+              class="course-img"
+              src="Resourses/cources/python2.PNG"
+              alt="Python Course"
+            />
             <h4 class="course-title">
               Python beyond the Basics- Object-Oriented Programming
             </h4>
-            <h6 class="course-author margin-5px">Infinite Skills</h6>
-            <p class="course-rate margin-5px">
+            <h6 class="course-author">Infinite Skills</h6>
+            <p class="course-rate">
               <span class="rate">4.4</span> ⭐⭐⭐⭐
               <span class="watch">(2,928)</span>
             </p>
-            <p class="course-price margin-5px">
+            <p class="course-price">
               E£229.99 <span class="alter">E£519.99</span>
             </p>
             <div class="NoBestSeller BestSeller">BestSeller</div>
@@ -135,18 +159,18 @@
           <div class="course">
             <img
               class="course-img"
-              src="Resourses/cources/python2.PNG"
-              alt=""
+              src="Resourses/cources/python.PNG"
+              alt="Python Course"
             />
             <h4 class="course-title">
               Python From Scratch & Selenium WeBDriver QA..
             </h4>
-            <h6 class="course-author margin-5px">Admas Kinfu</h6>
-            <p class="course-rate margin-5px">
+            <h6 class="course-author">Admas Kinfu</h6>
+            <p class="course-rate">
               <span class="rate">4.6</span> ⭐⭐⭐⭐⭐
               <span class="watch">(1,739)</span>
             </p>
-            <p class="course-price margin-5px">
+            <p class="course-price">
               E£219.99 <span class="alter">E£299.99</span>
             </p>
             <div class="BestSeller">BestSeller</div>
@@ -156,17 +180,17 @@
             <img
               class="course-img"
               src="Resourses/cources/python4.PNG"
-              alt=""
+              alt="Python Course"
             />
             <h4 class="course-title">
               Teach Your Kids to Code: Learn to Program Python at Any Age!
             </h4>
-            <h6 class="course-author margin-5px">Bryson Payne</h6>
-            <p class="course-rate margin-5px">
+            <h6 class="course-author">Bryson Payne</h6>
+            <p class="course-rate">
               <span class="rate">4.5</span> ⭐⭐⭐⭐
               <span class="watch">(8.788)</span>
             </p>
-            <p class="course-price margin-5px">
+            <p class="course-price">
               E£199.99 <span class="alter">E£319.99</span>
             </p>
             <div class="BestSeller">BestSeller</div>
@@ -176,17 +200,17 @@
             <img
               class="course-img"
               src="Resourses/cources/python15.PNG"
-              alt=""
+              alt="Python Course"
             />
             <h4 class="course-title">
               Python for Beginners - Learn Programming from scratch
             </h4>
-            <h6 class="course-author margin-5px">Jose Portilla</h6>
-            <p class="course-rate margin-5px">
+            <h6 class="course-author">Jose Portilla</h6>
+            <p class="course-rate">
               <span class="rate">4.5</span> ⭐⭐⭐⭐⭐
               <span class="watch">(10,928)</span>
             </p>
-            <p class="course-price margin-5px">
+            <p class="course-price">
               E£219.99 <span class="alter">E£51.299.99</span>
             </p>
             <div class="NoBestSeller BestSeller">BestSeller</div>
@@ -201,12 +225,12 @@
             <h4 class="course-title">
               Learning Python for Data Analysis and Visualization
             </h4>
-            <h6 class="course-author margin-5px">Youssif Selim</h6>
-            <p class="course-rate margin-5px">
+            <h6 class="course-author">Youssif Selim</h6>
+            <p class="course-rate">
               <span class="rate">4.4</span> ⭐⭐⭐⭐
               <span class="watch">(2,928)</span>
             </p>
-            <p class="course-price margin-5px">
+            <p class="course-price">
               E£310.99 <span class="alter">E£710.99</span>
             </p>
             <div class="NoBestSeller BestSeller">BestSeller</div>
@@ -215,17 +239,17 @@
             <img
               class="course-img"
               src="Resourses/cources/python7.PNG"
-              alt=""
+              alt="Python Course"
             />
             <h4 class="course-title">
               Python beyond the Basics- Object-Oriented Programming
             </h4>
-            <h6 class="course-author margin-5px">Mohamed Khattab</h6>
-            <p class="course-rate margin-5px">
+            <h6 class="course-author">Mohamed Khattab</h6>
+            <p class="course-rate">
               <span class="rate">4.4</span> ⭐⭐⭐⭐
               <span class="watch">(2,928)</span>
             </p>
-            <p class="course-price margin-5px">
+            <p class="course-price">
               E£229.99.99 <span class="alter">E£519.99.99</span>
             </p>
             <div class="NoBestSeller BestSeller">BestSeller</div>
@@ -234,17 +258,17 @@
             <img
               class="course-img"
               src="Resourses/cources/python8.PNG"
-              alt=""
+              alt="Python Course"
             />
             <h4 class="course-title">
               Automate the Boring Stuff with Python Programming
             </h4>
-            <h6 class="course-author margin-5px">Abdelfattah Hamdi</h6>
-            <p class="course-rate margin-5px">
+            <h6 class="course-author">Abdelfattah Hamdi</h6>
+            <p class="course-rate">
               <span class="rate">4.4</span> ⭐⭐⭐⭐
               <span class="watch">(2,928)</span>
             </p>
-            <p class="course-price margin-5px">
+            <p class="course-price">
               E£760.99 <span class="alter">E£850.99</span>
             </p>
             <div class="BestSeller">BestSeller</div>
@@ -253,17 +277,17 @@
             <img
               class="course-img"
               src="Resourses/cources/python14.PNG"
-              alt=""
+              alt="Python Course"
             />
             <h4 class="course-title">
               Python for Beginners with industrial Examples
             </h4>
-            <h6 class="course-author margin-5px">Mohamed Haider</h6>
-            <p class="course-rate margin-5px">
+            <h6 class="course-author">Mohamed Haider</h6>
+            <p class="course-rate">
               <span class="rate">4.4</span> ⭐⭐⭐⭐
               <span class="watch">(2,928)</span>
             </p>
-            <p class="course-price margin-5px">
+            <p class="course-price">
               E£960.99 <span class="alter">E£1289.99</span>
             </p>
             <div class="NoBestSeller BestSeller">BestSeller</div>
@@ -273,17 +297,17 @@
             <img
               class="course-img"
               src="Resourses/cources/python20.PNG"
-              alt=""
+              alt="Python Course"
             />
             <h4 class="course-title">
               Complete Python Boot camp From Zero to Hero in Python
             </h4>
-            <h6 class="course-author margin-5px">Abdulla Selim</h6>
-            <p class="course-rate margin-5px">
+            <h6 class="course-author">Abdulla Selim</h6>
+            <p class="course-rate">
               <span class="rate">4.4</span> ⭐⭐⭐⭐
               <span class="watch">(2,928)</span>
             </p>
-            <p class="course-price margin-5px">
+            <p class="course-price">
               E£490.99 <span class="alter">E£690.99</span>
             </p>
             <div class="BestSeller">BestSeller</div>

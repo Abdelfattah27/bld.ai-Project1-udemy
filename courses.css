@@ -1,0 +1,97 @@
+.courses-section {
+  /* border: 0.3px solid gray; */
+  margin: 30px;
+  padding: 50px;
+
+  padding-left: 40px;
+  padding-right: 20px;
+  font-size: larger;
+  margin-bottom: 200px;
+}
+.courses-section p {
+  max-width: 900px;
+}
+.explore {
+  width: 150px;
+  margin-top: 20px;
+}
+.course {
+  width: 18%;
+  min-width: 250px;
+  max-width: 300px;
+  margin: 11px 0px;
+  margin-right: 25px;
+  height: 330px;
+  cursor: pointer;
+}
+.course > * {
+  margin-top: 5px;
+}
+
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+  /* align-content: stretch; */
+}
+.course-title {
+  font-size: smaller;
+}
+
+.course-author {
+  color: #6a6f73;
+}
+.rate {
+  color: #b4690e;
+}
+.watch {
+  color: #6a6f73;
+}
+.course-price {
+  margin-bottom: 10px;
+}
+.alter {
+  color: #6a6f73;
+  text-decoration: line-through;
+}
+.BestSeller {
+  background-color: #eceb98;
+  font-size: smaller;
+  color: black;
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  text-indent: 3px;
+  margin: 10px 2px;
+  margin-left: 0px;
+  padding: 1px;
+}
+.NoBestSeller {
+  display: none;
+}
+.course-img {
+  width: 100%;
+  height: 130px;
+}
+.course-price,
+.course-rate {
+  font-weight: bolder;
+}
+.course-rate {
+  font-size: smaller;
+}
+@media screen and (max-width: 1045px) {
+  .courses {
+    justify-content: space-around;
+  }
+}
+@media screen and (max-width: 915px) {
+  #Drawing {
+    display: none;
+  }
+}
+@media screen and (max-width: 795px) {
+  #AWS,
+  #Data {
+    display: none;
+  }
+}
