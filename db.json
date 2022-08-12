@@ -1,0 +1,169 @@
+{
+  "courses": [
+    {
+      "image": "Resourses/cources/python2.PNG",
+      "image-alt": "Python Course",
+      "course-title": "Python beyond the Basics- Object-Oriented Programming",
+      "course-author": "Infinite Skills",
+      "course-rate": "4.4",
+      "watches": "2,928",
+      "course-price": "229.99",
+      "course-old-price": "519.99",
+      "bestSeller": "1"
+    },
+    {
+      "image": "Resourses/cources/python3.PNG",
+      "image-alt": "Python Course",
+      "course-title": "Data Science A-Z™: Real-Life Data Science Exercises Included",
+      "course-author": "Kirill Eremenko",
+      "course-rate": "4.6",
+      "watches": "32,928",
+      "course-price": "219.99",
+      "course-old-price": "619.99",
+      "bestSeller": "0"
+    },
+    {
+      "image": "Resourses/cources/python4.PNG",
+      "image-alt": "Python Course",
+      "course-title": "Data Science A-Z™: Real-Life Data Science Exercises Included",
+      "course-author": "Infinite Skills",
+      "course-rate": "4.4",
+      "watches": "2,928",
+      "course-price": "229.99",
+      "course-old-price": "519.99",
+      "bestSeller": "1"
+    },
+    {
+      "image": "Resourses/cources/python6.PNG",
+      "image-alt": "Python Course",
+      "course-title": "Machine Learning, Data Science and Deep Learning with Python",
+      "course-author": "sundog Education",
+      "course-rate": "4.5",
+      "watches": "21,928",
+      "course-price": "209.99",
+      "course-old-price": "599.99",
+      "bestSeller": "1"
+    },
+    {
+      "image": "Resourses/cources/python7.PNG",
+      "image-alt": "Python Course",
+      "course-title": "Javascript for Beginners take you from nothing to every thing",
+      "course-author": "Tech Learning Network",
+      "course-rate": "4.7",
+      "watches": "779",
+      "course-price": "129.99",
+      "course-old-price": "319.99",
+      "bestSeller": "0"
+    },
+    {
+      "image": "Resourses/cources/python8.PNG",
+      "image-alt": "Python Course",
+      "course-title": "Become a Certified HTML, CSS, JavaScript Web Developer",
+      "course-author": "Kalob Taulein",
+      "course-rate": "4.9",
+      "watches": "220,928",
+      "course-price": "289.99",
+      "course-old-price": "919.99",
+      "bestSeller": "0"
+    },
+    {
+      "image": "Resourses/cources/python11.PNG",
+      "image-alt": "Python Course",
+      "course-title": "Become web developer with dot net the future",
+      "course-author": "Abdelfattah Hamdi",
+      "course-rate": "5",
+      "watches": "1,211,928",
+      "course-price": "929.99",
+      "course-old-price": "9,019.99",
+      "bestSeller": "1"
+    },
+    {
+      "image": "Resourses/cources/python12.PNG",
+      "image-alt": "Python Course",
+      "course-title": "Django the future from zero to be hero backend developer",
+      "course-author": "bld.ai",
+      "course-rate": "4.9",
+      "watches": "200",
+      "course-price": "500",
+      "course-old-price": "1,000",
+      "bestSeller": "1"
+    },
+    {
+      "image": "Resourses/cources/python14.PNG",
+      "image-alt": "Python Course",
+      "course-title": "go lang parallel programming and go routines",
+      "course-author": "Google ",
+      "course-rate": "3.2",
+      "watches": "2,001",
+      "course-price": "29.99",
+      "course-old-price": "919.99",
+      "bestSeller": "0"
+    },
+    {
+      "image": "Resourses/cources/python15.PNG",
+      "image-alt": "Python Course",
+      "course-title": "learn embedded systems with c the father of languages",
+      "course-author": "Mohamed Arafa",
+      "course-rate": "4.2",
+      "watches": "22,928",
+      "course-price": "129.99",
+      "course-old-price": "319.99",
+      "bestSeller": "1"
+    },
+    {
+      "image": "Resourses/cources/python16.PNG",
+      "image-alt": "Python Course",
+      "course-title": "the mother of all languages c learn c in deeeeeeeeeep",
+      "course-author": "electronic menouf",
+      "course-rate": "0.1",
+      "watches": "222,928",
+      "course-price": "729.99",
+      "course-old-price": "619.99",
+      "bestSeller": "0"
+    },
+    {
+      "image": "Resourses/cources/python18.PNG",
+      "image-alt": "Python Course",
+      "course-title": "machine learning is the future of computer science learn it",
+      "course-author": "Abdulla selim",
+      "course-rate": "2.2",
+      "watches": "220,928",
+      "course-price": "929.99",
+      "course-old-price": "1,019.99",
+      "bestSeller": "0"
+    },
+    {
+      "image": "Resourses/cources/python19.PNG",
+      "image-alt": "Python Course",
+      "course-title": "Problem solving way to ICPC and google as will",
+      "course-author": "Youssif selim",
+      "course-rate": "4.9",
+      "watches": "23,928",
+      "course-price": "829.99",
+      "course-old-price": "119.99",
+      "bestSeller": "1"
+    },
+    {
+      "image": "Resourses/cources/python20.PNG",
+      "image-alt": "Python Course",
+      "course-title": "flutter is the new generation of web development",
+      "course-author": "Mohammed Emad",
+      "course-rate": "4.1",
+      "watches": "100,000,928",
+      "course-price": "529.99",
+      "course-old-price": "919.99",
+      "bestSeller": "1"
+    },
+    {
+      "image": "Resourses/cources/pythin10.PNG",
+      "image-alt": "Python Course",
+      "course-title": "learn html css js and react to become frontend developer",
+      "course-author": "Samir Mohamed",
+      "course-rate": "4.4",
+      "watches": "212,928",
+      "course-price": "123.99",
+      "course-old-price": "19.99",
+      "bestSeller": "1"
+    }
+  ]
+}
