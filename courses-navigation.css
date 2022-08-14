@@ -18,10 +18,16 @@
   font-size: 1.3rem;
   /* color: #6a6f73; */
 }
-.tab > a {
+
+.inActive {
   text-align: center;
   text-decoration: none;
   color: #6a6f73;
+}
+.active-tab {
+  color: black;
+  text-align: center;
+  text-decoration: none;
 }
 .tab > a:hover {
   color: black;
@@ -30,7 +36,4 @@
   padding-left: 30px;
   padding-right: 20px;
   font-size: large;
-}
-#Python > a {
-  color: black;
 }
