@@ -6,7 +6,6 @@ const HTMLcourses = document.querySelector(".courses-Wrapper");
 const noCourses = document.getElementsByClassName("noCourses");
 const swiperNextButton = document.querySelector(".swiper-button-next");
 const swiperPrevButton = document.querySelector(".swiper-button-prev");
-console.log(noCourses);
 // get elements from the server
 const newFetch = async () => {
   let response = undefined;
