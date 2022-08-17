@@ -20,6 +20,46 @@
       sizes="32x32"
       href="https://www.udemy.com/staticx/udemy/images/v8/favicon-32x32.png"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      :root {
+        --swiper-navigation-size: 16px;
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        top: 20%;
+        color: white;
+        background-color: black;
+        border-radius: 50%;
+        border: 1px solid white;
+        width: 50px;
+        height: 50px;
+        font-size: unset;
+        margin-right: -10px;
+        margin-left: -0.7%;
+      }
+      .card {
+        cursor: pointer;
+        --bs-card-border-width: unset;
+      }
+      .card-body {
+        padding-left: 0px;
+      }
+      ul,
+      ol {
+        padding-left: 0;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -63,10 +103,10 @@
         </div>
 
         <div class="nav-item log-in">
-          <button class="btn log-in-btn">Log in</button>
+          <button class="myBtn log-in-btn">Log in</button>
         </div>
         <div class="nav-item sign-up">
-          <button class="btn sign-up-btn">Sign up</button>
+          <button class="myBtn sign-up-btn">Sign up</button>
         </div>
         <div class="nav-item menu icon">
           <a class="anchor" href="">
@@ -96,52 +136,152 @@
           </p>
         </div>
       </section>
-      <section class="tab-section">
-        <h1 class="heading">A broad selection of courses</h1>
+      <section class="courses-content">
+        <section class="tab-section">
+          <h1 class="heading">A broad selection of courses</h1>
 
-        <h3 class="tab-text">
-          Choose from 185,000 online video courses with new additions published
-          every month
-        </h3>
-        <ul class="tabs">
-          <li class="tab">
-            <a id="python" class="inActive active-tab" href="#">Python</a>
-          </li>
-          <li class="tab">
-            <a id="Excel" href="#" class="inActive"> Excel </a>
-          </li>
-          <li class="tab">
-            <a id="WebDev" href="#" class="inActive"> Web Development </a>
-          </li>
-          <li class="tab">
-            <a id="javaScript" href="#" class="inActive"> JavaScript </a>
-          </li>
-          <li class="tab">
-            <a id="dataScience" href="#" class="inActive"> Data Science </a>
-          </li>
-          <li class="tab">
-            <a href="#" id="AWS" class="inActive"> AWS Certification </a>
-          </li>
-          <li class="tab">
-            <a id="draw" href="#" class="inActive"> Drawing </a>
-          </li>
-        </ul>
-      </section>
-      <section class="courses-section">
-        <h1 class="heading tab-heading">
-          Expand your career opportunities with Python
-        </h1>
-        <p class="description">
-          Take one of Udemy’s range of Python courses and learn how to code
-          using this incredibly useful language. Its simple syntax and
-          readability makes Python perfect for Flask, Django, data science, and
-          machine learning. You’ll learn how to build everything from games to
-          sites to apps. Choose from a range of courses that will appeal to
-        </p>
-        <button class="btn explore" type="menu">Explore Python</button>
-        <section class="courses"></section>
+          <h3 class="tab-text">
+            Choose from 185,000 online video courses with new additions
+            published every month
+          </h3>
+          <ul class="tabs">
+            <li class="tab">
+              <a id="python" class="inActive active-tab" href="#">Python</a>
+            </li>
+            <li class="tab">
+              <a id="Excel" href="#" class="inActive"> Excel </a>
+            </li>
+            <li class="tab">
+              <a id="WebDev" href="#" class="inActive"> Web Development </a>
+            </li>
+            <li class="tab">
+              <a id="javaScript" href="#" class="inActive"> JavaScript </a>
+            </li>
+            <li class="tab">
+              <a id="dataScience" href="#" class="inActive"> Data Science </a>
+            </li>
+            <li class="tab">
+              <a href="#" id="AWS" class="inActive"> AWS Certification </a>
+            </li>
+            <li class="tab">
+              <a id="draw" href="#" class="inActive"> Drawing </a>
+            </li>
+          </ul>
+        </section>
+        <section class="courses-section">
+          <h1 class="heading tab-heading">
+            Expand your career opportunities with Python
+          </h1>
+          <p class="description">
+            Take one of Udemy’s range of Python courses and learn how to code
+            using this incredibly useful language. Its simple syntax and
+            readability makes Python perfect for Flask, Django, data science,
+            and machine learning. You’ll learn how to build everything from
+            games to sites to apps. Choose from a range of courses that will
+            appeal to
+          </p>
+          <button class="myBtn explore" type="menu">Explore Python</button>
+          <section class="courses">
+            <div class="courses-Wrapper swiper-wrapper"></div>
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+
+            <!-- <div class="swiper-pagination"></div> -->
+          </section>
+        </section>
+        <section class="categories-section">
+          <h3 class="pb-5">Top categories</h3>
+          <div class="row gy-5 gx-5">
+            <div class="col-lg-3 col-md-4 col-sm-12 card">
+              <img
+                class="card-img-top"
+                src="Resourses/categories/lohp-category-design-v2.jpg"
+                alt="design category"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Design</h5>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12 card">
+              <img
+                class="card-img-top"
+                src="Resourses/categories/lohp-category-development-v2.jpg"
+                alt="development category"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Development</h5>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12 card">
+              <img
+                class="card-img-top"
+                src="Resourses/categories/lohp-category-marketing-v2.jpg"
+                alt="marketing category"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Marketing</h5>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12 card">
+              <img
+                class="card-img-top"
+                src="Resourses/categories/lohp-category-it-and-software-v2.jpg"
+                alt="it and software category"
+              />
+              <div class="card-body">
+                <h5 class="card-title">It and Software</h5>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12 card">
+              <img
+                class="card-img-top"
+                src="Resourses/categories/lohp-category-personal-development-v2.jpg"
+                alt="personal development category"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Personal Development</h5>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12 card">
+              <img
+                class="card-img-top"
+                src="Resourses/categories/lohp-category-business-v2.jpg"
+                alt="business category"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Business</h5>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12 card">
+              <img
+                class="card-img-top"
+                src="Resourses/categories/lohp-category-photography-v2.jpg"
+                alt="photography category"
+              />
+              <div class="card-body">
+                <h5 class="card-title">photography</h5>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12 card">
+              <img
+                class="card-img-top"
+                src="Resourses/categories/lohp-category-music-v2.jpg"
+                alt="music category"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Music</h5>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="script.js"></script>
   </body>

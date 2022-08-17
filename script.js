@@ -2,8 +2,10 @@ let courses,
   header,
   description,
   activeTab = "python"; // to store the courses data for future uses
-const HTMLcourses = document.querySelector(".courses");
+const HTMLcourses = document.querySelector(".courses-Wrapper");
 const noCourses = document.getElementsByClassName("noCourses");
+const swiperNextButton = document.querySelector(".swiper-button-next");
+const swiperPrevButton = document.querySelector(".swiper-button-prev");
 console.log(noCourses);
 // get elements from the server
 const newFetch = async () => {
@@ -87,7 +89,7 @@ function createAllCourses(courses) {
 // build course
 const createCourse = async function (course) {
   const courseContainer = document.createElement("div");
-  courseContainer.classList.add("course");
+  courseContainer.classList.add("course", "swiper-slide");
 
   const image = document.createElement("img");
   image.classList.add("course-img");
@@ -177,7 +179,21 @@ document.querySelector(".form-btn").addEventListener("click", function (event) {
   const self = this.parentNode.querySelector(".form-inp");
   searchForCourses(event, self);
 });
-
+function disableSwiper() {
+  if (swiperNextButton.ariaDisabled === "true") {
+    swiperNextButton.classList.add("swiper-button-hidden");
+    // swiperNextButton.style.display = "none";
+  } else {
+    swiperNextButton.classList.remove("swiper-button-hidden");
+  }
+  if (swiperPrevButton.ariaDisabled === "true") {
+    swiperPrevButton.classList.add("swiper-button-hidden");
+  } else {
+    swiperPrevButton.classList.remove("swiper-button-hidden");
+  }
+}
+// swiperNextButton.addEventListener("click", disableSwiper);
+// swiperPrevButton.addEventListener("click", disableSwiper);
 //entry point
 getCourses(createAllCourses);
 let tabs = [...document.querySelectorAll(".tab")].forEach((ele) => {
@@ -197,3 +213,47 @@ function changeTabs(event, self) {
   console.log(self.children[0].id);
   getCourses(createAllCourses);
 }
+
+var swiper = new Swiper(".courses", {
+  slidesPerView: 5,
+  spaceBetween: 25,
+  slidesPerGroup: 3,
+  watchOverflow: true,
+  loop: false,
+  centerSlide: "false",
+  fade: "false",
+  grabCursor: "false",
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+    },
+    650: {
+      slidesPerView: 2,
+      slidesPerGroup: 1,
+    },
+    800: {
+      slidesPerView: 3,
+      slidesPerGroup: 2,
+    },
+    950: {
+      slidesPerView: 4,
+      slidesPerGroup: 3,
+    },
+
+    1350: {
+      slidesPerView: 5,
+      slidesPerGroup: 4,
+    },
+  },
+});
