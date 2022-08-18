@@ -213,7 +213,7 @@ function changeTabs(event, self) {
   getCourses(createAllCourses);
 }
 
-var swiper = new Swiper(".courses", {
+const swiper = new Swiper(".courses", {
   slidesPerView: 5,
   spaceBetween: 25,
   slidesPerGroup: 3,
