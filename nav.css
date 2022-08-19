@@ -144,6 +144,9 @@
     order: -1;
   }
   .main-item {
+    flex-grow: 0;
+  }
+  .form {
     display: none;
   }
   .auxillary-search {
@@ -163,5 +166,8 @@
   }
   .udemy {
     flex-grow: 2;
+  }
+  .nav-bar {
+    padding: 0.5rem 0.3rem;
   }
 }

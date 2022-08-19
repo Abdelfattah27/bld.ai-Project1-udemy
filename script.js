@@ -1,44 +1,89 @@
-let courses;
+let courses,
+  header,
+  description,
+  activeTab = "python"; // to store the courses data for future uses
 const HTMLcourses = document.querySelector(".courses");
+const noCourses = document.getElementsByClassName("noCourses");
+// get elements from the server
 const newFetch = async () => {
-  let response = await fetch("http://localhost:3000/courses");
-  let json = await response.json();
-  courses = json;
+  let response = undefined;
+  response = await fetch(`http://localhost:3000/${activeTab ?? "python"}`);
+  let json = await response?.json();
+  courses = json["courses"];
+  header = json["header"];
+  description = json["description"];
   return json;
 };
-function getData(create) {
-  newFetch().then((x) => create(x));
+// use data fetched and pass them to specified function
+function getCourses(create) {
+  newFetch().then((x) => {
+    create(x["courses"]);
+    document.querySelector(".tab-heading").innerText = x["header"];
+    document.querySelector(".description").innerText = x["description"];
+    document.querySelector(".explore").innerText = `Explore ${activeTab}`;
+  });
 }
-function compareStrings(str, stri) {
-  str = str.toLowerCase();
-  stri = stri.toLowerCase();
-  for (let i = 0; i <= stri.length - str.length; i++) {
-    const sub = stri.slice(i, i + str.length);
-    if (sub === str) {
+// compare the string the user entered with course title
+function isSubString(subStr, str) {
+  str = str.toLowerCase().trim();
+  subStr = subStr.toLowerCase().trim();
+  if (!subStr) return true;
+
+  for (let i = 0; i <= str.length - subStr.length; i++) {
+    const subOfOriginString = str.slice(i, i + subStr.length);
+    if (subOfOriginString === subStr) {
       return true;
     }
   }
   return false;
 }
-getData(createAllCourses);
-function changeContent() {
-  HTMLcourses.innerHTML = "";
-  for (let i = 0; i < courses.length; i++) {
-    let title = courses[i]["course-title"];
-    if (compareStrings(this.value, title)) {
-      createCourse(courses[i]);
+// handling search failed
+function failedTOLoadCourses(search) {
+  let failedMessage = `
+        <div class="noCourses">
+          <h1 class="sorry">
+            Sorry, we couldn't find any results ${
+              search !== "" ? 'for  " ' + search + ' " ' : ""
+            }
+          </h1>
+          <h3 class="optionHeading">
+            Try adjusting your search. Here are some ideas:
+          </h3>
+          <ul class="ul">
+            <li class="searchOption">
+              Make sure all words are spelled correctly
+            </li>
+            <li class="searchOption">Try different search terms</li>
+            <li class="searchOption">Try more general search terms</li>
+          </ul>
+        </div>
+  `;
+  HTMLcourses.innerHTML = failedMessage;
+}
+// submit button
+function searchForCourses(event, self = "") {
+  event?.preventDefault(); // to prevent reload the page
+  HTMLcourses.innerHTML = ""; // delete all courses
+  for (const course of courses) {
+    if (isSubString(self?.value ?? "", course.title)) {
+      createCourse(course);
     }
   }
-}
-function createAllCourses(courses) {
-  for (let i = 0; i < courses.length; i++) {
-    createCourse(courses[i]);
+  if (HTMLcourses.innerHTML.trim() === "") {
+    failedTOLoadCourses(self.value ?? "");
   }
 }
-// newFetch()
-// newFetch.then((x) => clo(x));
-// clo(ww);
 
+function createAllCourses(courses) {
+  HTMLcourses.innerHTML = "";
+  courses.forEach((course) => {
+    createCourse(course);
+  });
+  if (HTMLcourses.innerHTML.trim() === "") {
+    failedTOLoadCourses();
+  }
+}
+// build course
 const createCourse = async function (course) {
   const courseContainer = document.createElement("div");
   courseContainer.classList.add("course");
@@ -52,26 +97,38 @@ const createCourse = async function (course) {
 
   courseTitle = document.createElement("h4");
   courseTitle.classList.add("course-title");
-  courseTitle.innerText = course["course-title"];
+  let title = course["title"];
+  if (title.length > 55) {
+    title = title.slice(0, 47);
+    title += "...";
+  }
+  courseTitle.innerText = title;
 
   courseContainer.appendChild(courseTitle);
 
   courseAuthor = document.createElement("h6");
   courseAuthor.classList.add("course-author");
-  courseAuthor.innerText = course["course-author"];
+  const authors = course["instructors"];
+  let instructorsNames = "";
+  for (const { name } of authors) {
+    instructorsNames += name + " , ";
+  }
+  courseAuthor.innerText = instructorsNames.slice(
+    0,
+    instructorsNames.lastIndexOf(" ,")
+  );
 
   courseContainer.appendChild(courseAuthor);
 
   const courseRate = document.createElement("p");
   courseRate.classList.add("course-rate");
 
-  const rate = Number(course["course-rate"]);
+  const rate = Math.round(Number(course["rating"]) * 100) / 100;
 
   rateSpan = document.createElement("span");
   rateSpan.classList.add("rate");
   rateSpan.innerText = rate;
   courseRate.appendChild(rateSpan);
-  console.log(courseRate);
 
   courseRate.innerHTML += " ";
   for (let i = 0; i < rate; i++) {
@@ -80,7 +137,7 @@ const createCourse = async function (course) {
   courseRate.innerHTML += " ";
   watchSpan = document.createElement("span");
   watchSpan.classList.add("watch");
-  watchSpan.innerText = `(${course["watches"]})`;
+  watchSpan.innerText = `(${rate * 250})`;
 
   courseRate.appendChild(watchSpan);
 
@@ -88,11 +145,11 @@ const createCourse = async function (course) {
 
   const coursePrice = document.createElement("p");
   coursePrice.classList.add("course-price");
-  coursePrice.innerText = `E£${course["course-price"]}   `;
+  coursePrice.innerText = `E£${course["price"]}   `;
 
   const oldPrice = document.createElement("span");
   oldPrice.classList.add("alter");
-  oldPrice.innerText = `E£${course["course-old-price"]}`;
+  oldPrice.innerText = `E£${Math.round(course["price"] + rate * 7500) / 100}`;
 
   coursePrice.appendChild(oldPrice);
 
@@ -101,7 +158,7 @@ const createCourse = async function (course) {
   bestSeller = document.createElement("dev");
   bestSeller.innerText = "BestSeller";
   bestSeller.classList.add("BestSeller");
-  if (Number(course["bestSeller"]) === 0) {
+  if (rate <= 4.4) {
     bestSeller.classList.add("NoBestSeller");
   }
 
@@ -109,6 +166,29 @@ const createCourse = async function (course) {
 
   HTMLcourses.appendChild(courseContainer);
 };
+function noResult() {}
+document.querySelector(".form-inp").addEventListener("keyup", function (event) {
+  const self = this;
+  searchForCourses(event, self);
+});
+document.querySelector(".form-btn").addEventListener("click", function (event) {
+  const self = this.parentNode.querySelector(".form-inp");
+  searchForCourses(event, self);
+});
 
-document.querySelector(".form-inp").addEventListener("keyup", changeContent);
-document.querySelector(".form-btn").addEventListener("click", changeContent);
+//entry point
+getCourses(createAllCourses);
+let tabs = [...document.querySelectorAll(".tab")].forEach((ele) => {
+  ele.addEventListener("click", function (event) {
+    const self = this;
+    changeTabs(event, self);
+  });
+});
+
+function changeTabs(event, self) {
+  event.preventDefault();
+  self.children[0].classList.add("active-tab");
+  self.parentNode.querySelector(`#${activeTab}`).classList.remove("active-tab");
+  activeTab = self.children[0].id;
+  getCourses(createAllCourses);
+}

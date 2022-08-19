@@ -38,7 +38,7 @@ body {
     display: none;
   }
 }
-@media screen and (max-width: 795px) {
+/* @media screen and (max-width: 795px) {
   .menu {
     display: inline-block;
     order: -1;
@@ -78,4 +78,4 @@ body {
   #Data {
     display: none;
   }
-}
+} */

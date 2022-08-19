@@ -1,0 +1,22 @@
+{
+  "name": "first-project-bld.ai",
+  "version": "1.0.0",
+  "description": "local json server",
+  "main": "index.js",
+  "scripts": {
+    "json:server": "json-server --watch db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abdelfattah27/bld.ai-Project1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abdelfattah27/bld.ai-Project1/issues"
+  },
+  "homepage": "https://github.com/Abdelfattah27/bld.ai-Project1#readme",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
+}

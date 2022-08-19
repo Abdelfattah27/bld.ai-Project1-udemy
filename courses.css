@@ -1,3 +1,9 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
 .courses-section {
   /* border: 0.3px solid gray; */
   margin: 30px;
@@ -12,8 +18,12 @@
   max-width: 900px;
 }
 .explore {
-  width: 150px;
+  min-width: 150px;
+  width: auto;
+  padding: 7px 16px;
   margin-top: 20px;
+  height: 50px;
+  margin-bottom: 30px;
 }
 .course {
   width: 18%;
@@ -85,13 +95,45 @@
   }
 }
 @media screen and (max-width: 915px) {
-  #Drawing {
+  #draw {
     display: none;
   }
 }
 @media screen and (max-width: 795px) {
   #AWS,
-  #Data {
+  #dataScience {
     display: none;
   }
+}
+.noCourses {
+  /* display: none; */
+  /* margin: auto; */
+  margin-top: 100px;
+  padding-left: 15%;
+}
+.noCourses > * {
+  font-size: 16px;
+}
+.sorry {
+  margin-bottom: 30px;
+  font-size: 20px;
+
+  /* font-weight: lighter; */
+}
+.ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+.optionHeading {
+  font-weight: 600;
+}
+.searchOption {
+  font-size: 17px;
+  padding-left: 20px;
+  display: list-item;
 }
