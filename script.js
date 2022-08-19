@@ -4,7 +4,6 @@ let courses,
   activeTab = "python"; // to store the courses data for future uses
 const HTMLcourses = document.querySelector(".courses");
 const noCourses = document.getElementsByClassName("noCourses");
-console.log(noCourses);
 // get elements from the server
 const newFetch = async () => {
   let response = undefined;
@@ -130,7 +129,6 @@ const createCourse = async function (course) {
   rateSpan.classList.add("rate");
   rateSpan.innerText = rate;
   courseRate.appendChild(rateSpan);
-  // console.log(courseRate);
 
   courseRate.innerHTML += " ";
   for (let i = 0; i < rate; i++) {
@@ -189,11 +187,8 @@ let tabs = [...document.querySelectorAll(".tab")].forEach((ele) => {
 
 function changeTabs(event, self) {
   event.preventDefault();
-  // console.log(self.children[0]);
-  console.log(self.parentNode);
   self.children[0].classList.add("active-tab");
   self.parentNode.querySelector(`#${activeTab}`).classList.remove("active-tab");
   activeTab = self.children[0].id;
-  console.log(self.children[0].id);
   getCourses(createAllCourses);
 }
