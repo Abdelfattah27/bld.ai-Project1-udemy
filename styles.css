@@ -3,7 +3,9 @@
   margin: 0px;
   box-sizing: border-box;
 }
-
+.courses-content {
+  margin: 0px 4%;
+}
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap");
 body {
   font-family: "Source Sans Pro", sans-serif;
@@ -38,7 +40,7 @@ body {
     display: none;
   }
 }
-@media screen and (max-width: 795px) {
+/* @media screen and (max-width: 795px) {
   .menu {
     display: inline-block;
     order: -1;
@@ -78,4 +80,4 @@ body {
   #Data {
     display: none;
   }
-}
+} */
