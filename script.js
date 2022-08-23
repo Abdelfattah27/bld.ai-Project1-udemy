@@ -2,15 +2,16 @@ let courses,
   header,
   description,
   activeTab = "python"; // to store the courses data for future uses
-const HTMLcourses = document.querySelector(".courses-Wrapper");
+const htmlCourses = document.querySelector(".courses-Wrapper");
 const noCourses = document.getElementsByClassName("noCourses");
 const swiperNextButton = document.querySelector(".swiper-button-next");
 const swiperPrevButton = document.querySelector(".swiper-button-prev");
 // get elements from the server
 const newFetch = async () => {
-  let response = undefined;
-  response = await fetch(`http://localhost:3000/${activeTab ?? "python"}`);
-  let json = await response?.json();
+  const response = await fetch(
+    `http://localhost:3000/${activeTab ?? "python"}`
+  );
+  const json = await response?.json();
   courses = json["courses"];
   header = json["header"];
   description = json["description"];
@@ -60,28 +61,28 @@ function failedTOLoadCourses(search) {
           </ul>
         </div>
   `;
-  HTMLcourses.innerHTML = failedMessage;
+  htmlCourses.innerHTML = failedMessage;
 }
 // submit button
 function searchForCourses(event, self = "") {
   event?.preventDefault(); // to prevent reload the page
-  HTMLcourses.innerHTML = ""; // delete all courses
+  htmlCourses.innerHTML = ""; // delete all courses
   for (const course of courses) {
     if (isSubString(self?.value ?? "", course.title)) {
       createCourse(course);
     }
   }
-  if (HTMLcourses.innerHTML.trim() === "") {
+  if (htmlCourses.innerHTML.trim() === "") {
     failedTOLoadCourses(self.value ?? "");
   }
 }
 
 function createAllCourses(courses) {
-  HTMLcourses.innerHTML = "";
+  htmlCourses.innerHTML = "";
   courses.forEach((course) => {
     createCourse(course);
   });
-  if (HTMLcourses.innerHTML.trim() === "") {
+  if (htmlCourses.innerHTML.trim() === "") {
     failedTOLoadCourses();
   }
 }
@@ -131,7 +132,6 @@ const createCourse = async function (course) {
   rateSpan.classList.add("rate");
   rateSpan.innerText = rate;
   courseRate.appendChild(rateSpan);
-  // console.log(courseRate);
 
   courseRate.innerHTML += " ";
   for (let i = 0; i < rate; i++) {
@@ -167,7 +167,7 @@ const createCourse = async function (course) {
 
   courseContainer.appendChild(bestSeller);
 
-  HTMLcourses.appendChild(courseContainer);
+  htmlCourses.appendChild(courseContainer);
 };
 function noResult() {}
 document.querySelector(".form-inp").addEventListener("keyup", function (event) {
@@ -204,12 +204,9 @@ let tabs = [...document.querySelectorAll(".tab")].forEach((ele) => {
 
 function changeTabs(event, self) {
   event.preventDefault();
-  // console.log(self.children[0]);
-  console.log(self.parentNode);
   self.children[0].classList.add("active-tab");
   self.parentNode.querySelector(`#${activeTab}`).classList.remove("active-tab");
   activeTab = self.children[0].id;
-  console.log(self.children[0].id);
   getCourses(createAllCourses);
 }
 

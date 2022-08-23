@@ -35,6 +35,18 @@
       :root {
         --swiper-navigation-size: 16px;
       }
+
+      .card {
+        cursor: pointer;
+        --bs-card-border-width: unset;
+      }
+      .card-body {
+        padding-left: 0px;
+      }
+      ul,
+      ol {
+        padding-left: 0;
+      }
       .swiper-button-next,
       .swiper-button-prev {
         top: 20%;
@@ -48,16 +60,13 @@
         margin-right: -10px;
         margin-left: -0.7%;
       }
-      .card {
-        cursor: pointer;
+      .card-img-top {
         --bs-card-border-width: unset;
+        max-width: 300px;
+        max-height: 300px;
       }
-      .card-body {
-        padding-left: 0px;
-      }
-      ul,
-      ol {
-        padding-left: 0;
+      .swiper-button-disabled {
+        display: none;
       }
     </style>
   </head>
@@ -194,6 +203,7 @@
           <div class="row gy-5 gx-5">
             <div class="col-lg-3 col-md-4 col-sm-12 card">
               <img
+                width="300px"
                 class="card-img-top"
                 src="Resourses/categories/lohp-category-design-v2.jpg"
                 alt="design category"
@@ -204,6 +214,7 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-12 card">
               <img
+                width="300px"
                 class="card-img-top"
                 src="Resourses/categories/lohp-category-development-v2.jpg"
                 alt="development category"
@@ -214,6 +225,7 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-12 card">
               <img
+                width="300px"
                 class="card-img-top"
                 src="Resourses/categories/lohp-category-marketing-v2.jpg"
                 alt="marketing category"
@@ -224,6 +236,7 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-12 card">
               <img
+                width="300px"
                 class="card-img-top"
                 src="Resourses/categories/lohp-category-it-and-software-v2.jpg"
                 alt="it and software category"
@@ -234,6 +247,7 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-12 card">
               <img
+                width="300px"
                 class="card-img-top"
                 src="Resourses/categories/lohp-category-personal-development-v2.jpg"
                 alt="personal development category"
@@ -244,6 +258,7 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-12 card">
               <img
+                width="300px"
                 class="card-img-top"
                 src="Resourses/categories/lohp-category-business-v2.jpg"
                 alt="business category"
@@ -254,6 +269,7 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-12 card">
               <img
+                width="300px"
                 class="card-img-top"
                 src="Resourses/categories/lohp-category-photography-v2.jpg"
                 alt="photography category"
@@ -264,6 +280,7 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-12 card">
               <img
+                width="300px"
                 class="card-img-top"
                 src="Resourses/categories/lohp-category-music-v2.jpg"
                 alt="music category"

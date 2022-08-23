@@ -109,6 +109,9 @@
 
   /* font-weight: lighter; */
 }
+.categories-section {
+  padding: 0px 30px;
+}
 .ul {
   display: block;
   list-style-type: disc;
@@ -126,6 +129,7 @@
   padding-left: 20px;
   display: list-item;
 }
+
 @media screen and (max-width: 1045px) {
   .courses {
     justify-content: space-around;
